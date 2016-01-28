@@ -12,9 +12,9 @@
 	echo '<i>Vous êtes ici : </i> <a href="./index.php">Index du Forum</a>';
 	
 	?>
-	<h1>Mon super forum </h1>
+    <h1>Mon super forum </h1>
 
-	<?php 
+    <?php
 		//initialisation de 2 variables 
 		$totalDesMessages = 0; 
 		$categorie = NULL; 
@@ -35,10 +35,10 @@
 		$query->execute();
 		
 	?>
-		<!-- on affiche maintenant le tableau à générer par la requête ci-dessus -->
-		<table>
+        <!-- on affiche maintenant le tableau à générer par la requête ci-dessus -->
+        <table>
 
-			<?php 
+            <?php
 				//debut de la boucle
 				while ($data = $query->fetch())
 				{
@@ -47,15 +47,15 @@
 						//si c'est une nouvelle catégorie on l'affiche
 					$categorie = $data['cat_id'];
 					?>
-				<tr>
-					<th></th>
-					<th class="titre"><strong><?php echo stripslashes(htmlspecialchars($data['cat_nom'])); ?>
+                <tr>
+                    <th></th>
+                    <th class="titre"><strong><?php echo stripslashes(htmlspecialchars($data['cat_nom'])); ?>
 						</strong></th>
-					<th class="nombremessages"><strong>Messages</strong></th>
-					<th class="nombresujets"><strong>Sujets</strong></th>
-					<th class="derniermessage"><strong>Dernier Message</strong></th>
-				</tr>
-				<?php
+                    <th class="nombremessages"><strong>Messages</strong></th>
+                    <th class="nombresujets"><strong>Sujets</strong></th>
+                    <th class="derniermessage"><strong>Dernier Message</strong></th>
+                </tr>
+                <?php
 					
 					}
 					
@@ -103,7 +103,7 @@
 			echo '</table></div>';
 			?>
 
-					<?php
+                    <?php
 				//Le pied de page ici :
 				echo'<div id="footer">
 				<h2>
@@ -123,7 +123,7 @@
 				echo'Le dernier membre est <a href="./voirprofil.php?m='.$data['membre_id'].'&amp;action=consulter">'.$derniermembre.'</a>.</p>';
 				$query->CloseCursor();
 				?>
-						</div>
-						</body>
+                        </div>
+                        </body>
 
-						</html>
+                        </html>

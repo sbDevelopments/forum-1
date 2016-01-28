@@ -69,6 +69,17 @@ else
         $_SESSION['id'] = $data['membre_id'];
         $message='<p>Bienvenue '.$data['membre_pseudo']. ' vous êtes maintenant connecté </p> <p> Cliquez <a href="./index.php">ici</a> pour revenir à l\'accueil';
     }
-
+    else
+    {//si le mot de passe n'est pas bon
+        $message='<p>Une erreur s\'est produite pendant l\'identification.</br>
+        Le mot de passe ou le pseudo entré ne sont pas corrects.</p>
+        <p>Cliquez <a href="./connexion.php">ici</a> pour revenir à la page précédente.
+        <br /><br />
+        Cliquez <a href="./index.php">ici</a> pour revenir à la page d\'accueil</p>';
+    }
+    $query->closeCursor();
 }
-		?>
+    echo $message.'</div></body></html>';
+?>
+
+        <input type="hidden" name="page" value="<?php echo $_SERVER['HTTP_REFERER']; ?>" />
